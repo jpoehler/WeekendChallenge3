@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="/assets/styles/style.css" />
+
+  <!-- SCRIPTS -->
+  <script type="text/javascript" src="/vendors/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/scripts/app.js"></script>
+
+</head>
+<body>
+  <div class="form">
+
+  <form id="calculator">
+    <p>
+    <label for="firstnumber">Enter a number:</label>
+    <input type="text" class="dataObject" id="firstnumber" name="firstnumber" placeholder="Enter a number"/>
+    </p>
+
+    <p>
+    <label for="anothernumber">Enter another number:</label>
+    <input type="text" class="dataObject" id="anothernumber" name="anothernumber" placeholder="Enter another number"/>
+    </p>
+
+    <p class="btn-radio">
+      Add <input type="radio" name="operand" class="radios" value="add">
+      Subtract <input type="radio" name="operand" class="radios" value="subtract">
+      Multiply <input type="radio" name="operand" class="radios" value="multiply">
+      Divide <input type="radio" name="operand" class="radios" value="divide">
+    </p>
+
+    <p>
+    <input type="submit" value="Enter" class="btn-enter btn btn-default" />
+    </p>
+
+  </form>
+  </div>
+  <div class="results">
+   <h3>Answer: <br />
+   <span class="inputNumbers"></span><br />
+   <span class="answer"></span></h3>
+
+  <button type="button" button class="btn-clear btn btn-default">Clear</button>
+</div>
+</body>
+</html>
