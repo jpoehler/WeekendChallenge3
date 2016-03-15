@@ -15,22 +15,26 @@ var answer = 0;
 switch (operand){
   case 'add':
   answer = firstnumber + anothernumber;
+  answer = answer.toString();
   break;
 
   case 'subtract':
   answer = firstnumber - anothernumber;
+  answer = answer.toString();
   break;
 
   case 'multiply':
   answer = firstnumber * anothernumber;
+  answer = answer.toString();
   break;
 
   case 'divide':
   answer = firstnumber / anothernumber;
+  answer = answer.toString();
   break;
 };
 console.log(answer);
-res.send({response: answer});
+res.send(answer);
 
 });
 

@@ -8,7 +8,7 @@ $(document).ready(function (){
 
   var calculation = {};
   var dataArray = [];
-  var answer = 0;
+  var answer;
 
 
   function submitData(event){
@@ -25,7 +25,6 @@ $(document).ready(function (){
 
       sendData();
 
-
   }
 
   function sendData(){
@@ -34,16 +33,15 @@ $(document).ready(function (){
       type: "POST",
       url: "/input",
       data: calculation,
-      success: function(answer){
-        answer = answer.response;
-        appendAnswer();
+      success: function(response){
+        appendAnswer(response);
       }
     });
   }
 
 
   //function to append entered numbers, operand, and answer to the DOM
-  function appendAnswer(){
+  function appendAnswer(response){
     var symbol = "";
     switch (calculation.operand){
       case "add":
@@ -61,9 +59,9 @@ $(document).ready(function (){
       case "divide":
       symbol = "/"
       break;
-    };
+    }
 
-    $('.inputNumbers').text(calculation.firstnumber + " " + symbol + " " + calculation.anothernumber + " = " + answer);
+    $('.inputNumbers').text(calculation.firstnumber + " " + symbol + " " + calculation.anothernumber + " = " + response);
 
   }
 
