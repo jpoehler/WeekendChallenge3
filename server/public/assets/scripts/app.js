@@ -30,11 +30,10 @@ $(document).ready(function (){
 
   function sendData(){
 
-    var dataObject = calculation;
     $.ajax({
       type: "POST",
       url: "/input",
-      data: dataObject,
+      data: calculation,
       success: function(answer){
         answer = answer.response;
         appendAnswer();
@@ -64,14 +63,12 @@ $(document).ready(function (){
       break;
     };
 
-    $('.inputNumbers').text(calculation.firstnumber + " " + symbol + " " + calculation.anothernumber);
-
-    $('.answer').text(" = " + answer);
+    $('.inputNumbers').text(calculation.firstnumber + " " + symbol + " " + calculation.anothernumber + " = " + answer);
 
   }
 
   //function to clear the answer when the clear button is clicked
   function clearData(){
     $('.inputNumbers').text("");
-    $('.answer').text("");
+
   }

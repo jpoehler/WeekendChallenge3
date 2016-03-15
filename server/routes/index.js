@@ -29,7 +29,7 @@ switch (operand){
   answer = firstnumber / anothernumber;
   break;
 };
-
+console.log(answer);
 res.send({response: answer});
 
 });
